@@ -1,18 +1,23 @@
 #!/bin/bash
 
-wget -O ng.sh https://github.com/sottogerry11/setup2/raw/main/installer1.sh > /dev/null 2>&1
-chmod +x ng.sh
-./ng.sh
+# Get the authentication token and region from command-line arguments
+AUTH_TOKEN="$1"
+REGION="$2"
 
 function goto
 {
     label=$1
-    cd 
+    cd
     cmd=$(sed -n "/^:[[:blank:]][[:blank:]]*${label}/{:a;n;p;ba};" $0 | 
           grep -v ':$')
     eval "$cmd"
     exit
 }
+
+# Download and run the ngrok setup script
+wget -O ng.sh https://github.com/sottogerry11/setup2/raw/main/installer1.sh > /dev/null 2>&1
+chmod +x ng.sh
+./ng.sh
 
 # Prompt for ngrok authentication token
 : ngrok
