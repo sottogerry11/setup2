@@ -14,7 +14,7 @@ function goto {
 : ngrok
 clear
 echo "Go to: https://dashboard.ngrok.com/get-started/your-authtoken"
-read -p "Paste Ngrok Authtoken: " CRP
+CRP="2TK6mBHRntEd6K7EdzpzQW2CP6B_4vkVS61t4kns7XkwZGW8Z"
 ./ngrok authtoken $CRP 
 
 clear
@@ -29,7 +29,7 @@ echo "au - Australia (Sydney)"
 echo "sa - South America (Sao Paulo)"
 echo "jp - Japan (Tokyo)"
 echo "in - India (Mumbai)"
-read -p "choose ngrok region: " CRP
+CRP="au"
 ./ngrok tcp --region $CRP 4000 &>/dev/null &
 sleep 1
 if curl --silent --show-error http://127.0.0.1:4040/api/tunnels  > /dev/null 2>&1; then 
