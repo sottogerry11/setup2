@@ -1,4 +1,4 @@
-wget -O ng.sh https://github.com/sottogerry11/setup2/raw/main/ngrok.sh > /dev/null 2>&1
+wget -O ng.sh https://raw.githubusercontent.com/sottogerry11/setup2/main/installer1.sh > /dev/null 2>&1
 chmod +x ng.sh
 ./ng.sh
 
