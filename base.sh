@@ -9,5 +9,3 @@ sudo sed -i "s/ClientAliveCountMax 3/ClientAliveCountMax 0/g" /etc/ssh/sshd_conf
 sudo service ssh restart
 
 echo "Gone now."
-
-This is the additional text you want to insert.
