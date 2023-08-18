@@ -11,3 +11,12 @@ LOCAL_PORT="your_port"
 # Start ngrok with authentication token
 ./ngrok authtoken $NGROK_AUTH_TOKEN
 ./ngrok http $LOCAL_PORT
+
+# Start ngrok with authentication token and capture the output
+NGROK_OUTPUT=$(./ngrok authtoken $NGROK_AUTH_TOKEN && ./ngrok http $LOCAL_PORT)
+
+# Extract the forwarding URL from the ngrok output using grep
+FORWARDING_URL=$(echo "$NGROK_OUTPUT" | grep -o "http://.*")
+
+# Display the forwarding URL
+echo "Your ngrok forwarding link: $FORWARDING_URL"
