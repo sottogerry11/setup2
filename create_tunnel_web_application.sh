@@ -6,7 +6,7 @@ chmod +x ng.sh
 NGROK_AUTH_TOKEN="2TK6mBHRntEd6K7EdzpzQW2CP6B_4vkVS61t4kns7XkwZGW8Z"
 
 # Replace 'your_port' with the port your web application is running on
-LOCAL_PORT="your_port"
+LOCAL_PORT="5000"
 
 # Start ngrok with authentication token
 ./ngrok authtoken $NGROK_AUTH_TOKEN
